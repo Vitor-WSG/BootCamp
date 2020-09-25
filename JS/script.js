@@ -53,15 +53,21 @@ switch (r) {
 */
 
 
+/* var numA=0;
 var soma=0;
 
 for (numA=1; numA <=10; numA++){
-  soma=5;
+  
 }
 
-if (soma%2 !==0 ){
-  console.log("IMPAR");
+if (numA%2 !==0 ){
+  console.log(numA+" impar");
 }
-else if (soma%2===0){
- console.log("PAR");
+else if (numA%2===0){
+ console.log(numA+" par");
+} */
+var numeropar=2;
+while(numeropar<=100){
+    document.write(numeropar+"<br>");
+    numeropar=numeropar+2;
 }

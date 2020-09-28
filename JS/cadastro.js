@@ -10,7 +10,7 @@ function start(){
     //Funçoes que deverm ser iniciadas
     preventFormSubmit();
     activateInput(); //Cursor barra de pesquisa
-    render();
+    //render();
 }
 function preventFormSubmit(){
     function handleFormSubmit(event){
@@ -24,11 +24,10 @@ function preventFormSubmit(){
 function activateInput(){
     function insertName(newname){
         globalNames.push(newname)
-        //console.log(globalNames) //Mostra os incrementos dos valores do vetor
+        /* console.log(globalNames) //Mostra os incrementos dos valores do vetor */
     }
     function handletyping(event){
         if (event.key === 'Enter'){
-            //console.log(event.target)
             insertName(event.target.value)
         }
     }

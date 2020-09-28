@@ -66,8 +66,8 @@ if (numA%2 !==0 ){
 else if (numA%2===0){
  console.log(numA+" par");
 } */
-var numeropar=2;
-while(numeropar<=100){
-    document.write(numeropar+"<br>");
-    numeropar=numeropar+2;
+var num=0;
+for (num i=0 ; i<=10 ; i++){
+  num+=num
 }
+document.write(num);

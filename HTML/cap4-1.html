@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict' //o JavaScript acusa mais erros.
+        //var x let 
+/* 
+        function VAR(){//var tem escopo abrangente
+            for(var i=0; i<=10; i++){
+                console.log('VAR'+i); 
+            } 
+            i=20;
+            console.log(i);           
+        }
+        
+        function LET(){//Let tem escopo reduzido
+            for (let i=0;i<=10;i++){
+                console.log('LET'+i);
+            }
+            //i=20;//No caso do LET, não acessa a função que esta por fora do escopo do for, ou seja a chave do for.
+            //console.log(i);  
+        }
+        VAR();
+        LET();
+ */
+        
+    /* //CONST -  não permite reatribuir valores
+    const c=10; //c vale 10.
+    c=20; // ERRO C não pode valer 20.
+    //Porem...
+    const d=[];//d fica vazio.
+    d.push(1); //do recebe 1
+ */
+
+    //Comparação de Function com Arrow Function.
+    function sum(a,b){
+        return a+b;
+    }
+    console.log(sum(2,3))
+
+    const sum2 = function(a,b){
+        return a+b
+    } 
+    console.log(sum2(3,4))
+
+    //arrow function
+    const sum3 = (a,b)=> {
+        return a+b;
+    }
+    console.log(sum3(5,6))
+
+    //arrow function reduzida
+    const sum4 = (a,b) => a+b;
+    console.log(sum4(6,7))
+
+    //template literals
+    const name='Vitor';
+    const segname='Gomes';
+    const text1='Meu nome é '+name+' '+segname;
+    const text2=`Meu nome é ${name} ${segname}`//coloque os valore em cifrão, chaves e CRASE.
+    console.log(text1);
+    console.log(text2);
+
+    //Defatult parâmetros
+    const sum5=(a,b=5) => a+b;//defino um valor caso nao seja informado, nesse caso b=5 quando não informado.
+    console.log(sum5(10))
+    console.log(sum5(10,8)) //Nesse caso b vale 8, porque foi informado.
+
+    </script>
+</body>
+</html>

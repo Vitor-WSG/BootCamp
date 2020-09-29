@@ -4,18 +4,17 @@ window.addEventListener('load',start); //evendo de load garante que seja executa
 var globalNames=['Um','Dois','Três','Quatro'];
 
 function start(){
-   /*  password = document.querySelector('#password') Ler os valores do campo de senha */
+/*  password = document.querySelector('#password') Ler os valores do campo de senha */
     InputName = document.querySelector('#inputName')//Cursor barra de pesquisa
 
-    //Funçoes que deverm ser iniciadas
+//Funçoes que deverm ser iniciadas
     preventFormSubmit();
     activateInput(); //Cursor barra de pesquisa
-    //render();
+    render();
 }
 function preventFormSubmit(){
     function handleFormSubmit(event){
         event.preventDefault();
-
     }
     var form = document.querySelector('form');
     form.addEventListener('submit',handleFormSubmit)
@@ -24,20 +23,19 @@ function preventFormSubmit(){
 function activateInput(){
     function insertName(newname){
         globalNames.push(newname)
-        /* console.log(globalNames) //Mostra os incrementos dos valores do vetor */
+/* console.log(globalNames) //Mostra os incrementos dos valores do vetor */
     }
     function handletyping(event){
         if (event.key === 'Enter'){
             insertName(event.target.value)
+            //console.log(event.target.value)
         }
     }
     InputName.addEventListener('keyup',handletyping);
     InputName.focus();
-   /*  password.addEventListener('keyup',handletyping); Campo para ler os valores digitados em senha*/
-    
+   /*  password.addEventListener('keyup',handletyping); Campo para ler os valores digitados em senha*/  
 }
- function render(){
-
+function render(){
     function createDeleteButton(Index){
         function deleteName(){
             globalNames.splice(Index,1);
@@ -49,7 +47,6 @@ function activateInput(){
         button.addEventListener('click',deleteName);
         return button;
     }
-
     function createSpan(name){
         function editItem(){
             InputName.value=name;
@@ -60,17 +57,13 @@ function activateInput(){
         span.textContent= name;
         span.addEventListener('click',editItem)
         return span;
-
     }
-
     var divNames = document.querySelector('#names');
     divNames.innerHTML='';
-    var ul = document.createElement('ul');//criar elementos no HTML
-    
+    var ul = document.createElement('ul');//criar elementos no HTML    
 
     for (var i=0; i < globalNames.length; i++)//Equanto o vetor I for menor que globalNames
     {
-        
         var button = createDeleteButton();
         var span = createSpan(currentName);
         var currentName = globalNames[i];
@@ -78,7 +71,6 @@ function activateInput(){
 
         li.appendChild(button)
         li.appendChild(span)
-
         ul.appendChild(li)
     }
     divNames.appendChild(ul);

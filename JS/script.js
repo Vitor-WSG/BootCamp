@@ -1,73 +1,55 @@
-/*confirm('Deseja acessar?');
-prompt('teste');
-alert('bem vindo');*/
 
-/*var a = 4;
-var b = 4;
-if (a > b) {
-  console.log(a + ' é maior do que ' + b);
-} else {
-  if (a < b) {
-    console.log(a + ' é menor do que ' + b);
-  } else {
-    console.log(a + ' é igual a ' + b);
-  }
+let tabcountries = null;
+let tabFavorites = null;
+
+let allCountries = [];
+let favoriteCountries=[];
+
+let countCountries = 0;
+let countFavorites = 0;
+
+let totalPopulationList= 0;
+let totalPopulationsFavorites = 0;
+
+let numberFormat = null;
+
+window.addEventListener('load', ()=> {
+
+    tabCountries= document.querySelector('#tabCountries');
+    tabFavorites= document.querySelector('#tabFavorites');
+    countCountries=document.querySelector('#countCountries');
+    countFavorites=document.querySelector('#countFavorites');
+
+    totalPopulationList=document.querySelector('#totalPopulationList');
+    totalPopulationsFavorites=document.querySelector('#totalPopulationFavorites');
+
+   numberFormat = Intl.NumberFormat('pt-BR');
+
+    fetchCountries();
+})
+async function fetchCountries (){
+    const res = await fetch('https://restcountries.eu/rest/v2/all');
+    const json = await res.json();
+    allCountries = json.map(country => {
+        const {numericCode,translations,population,flag}=country;//utilizado para reduzir as informações do 'return'
+        return { //vai trazer somente esses dados da API
+            id:numericCode,
+            name:translations.pt,
+            population,
+            flag
+        };
+    });
+    render();
 }
-
-
-var r=7;
-switch (r) {
-  case 1:
-    r = 'Domingo';
-    console.log("Domingo")
-    break;
-  case 2:
-    r = 'Segunda-feira';
-    console.log("Segunda-feira")
-    break;
-  case 3:
-    r = 'Terca-feira';
-    console.log("Terca-feira")
-    break;
-  case 4:
-    r = 'Quarta-feira';
-    console.log("Quarta-feira")
-    break;
-  case 5:
-    r = 'Quinta-feira';
-    console.log("Quinta-feira")
-    break;
-  case 6:
-    r = 'Sexta-feira';
-    console.log("Sexta-feira")
-    break;
-  case 7:
-    r = 'Sabado';
-    console.log("Sabado")
-    break;
-
-  default:
-    r = 'Dia Inválido';
-    console.log('Nenhuma dia da semana informado');
+    function render(){
+        renderCountryList();
+        renderFavorites();
+        renderSummary();
+        handleCountryButtons()
 }
-*/
-
-
-/* var numA=0;
-var soma=0;
-
-for (numA=1; numA <=10; numA++){
-  
-}
-
-if (numA%2 !==0 ){
-  console.log(numA+" impar");
-}
-else if (numA%2===0){
- console.log(numA+" par");
-} */
-var num=0;
-for (num i=0 ; i<=10 ; i++){
-  num+=num
-}
-document.write(num);
+function renderCountryList(){
+    
+};
+function renderFavorites(){};
+function renderSummary(){};
+function handleCountryButtons(){};

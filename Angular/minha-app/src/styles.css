@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+app-game table{
+    border-spacing:0 ; /* tira o espaço entre as bordas */
+    border-collapse: collapse; /* uni as bordas das celulas adjascentes
+ */
+}
+app-game td {
+    border: 3px solid red;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle; /* para ficar centralizado na vertical */     
+
+}
